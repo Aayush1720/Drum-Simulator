@@ -9,11 +9,24 @@ cap = cv2.VideoCapture(0)
 def Press(key):
     pyautogui.press(key)
 
+    
+
 img1 = cv2.imread('ride.jpg')
 img2 = cv2.imread('snare.png')
+img4 = cv2.imread('tom1.jpg')
 img1_height, img1_width, _ = img1.shape
-img2 = cv2.imread('snare1.png')
+img2 = cv2.imread('snare1.jpg')
 img2_height, img2_width, _ = img2.shape
+img3 = cv2.imread('hihate.jpg')
+img3_height, img3_width, _ = img3.shape
+img4_height, img4_width, _ = img4.shape
+img5 = cv2.imread('kick.jpg')
+img5_height, img5_width, _ = img5.shape
+img6 = cv2.imread('tomid.jpg')
+img6_height, img6_width, _ = img6.shape
+
+
+#print(img4.shape)
 x1 = -1 
 y1 = -1
 px1 = -1
@@ -25,6 +38,10 @@ while True:
     hsv = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
     frame[ 0:0+img1_height , 0:0+img1_width ] = img1
     frame[ 0:0+img2_height , 400:400+img2_width ] = img2
+    frame[ 0:0+img3_height , 800:800+img3_width ] = img3
+    frame[ 0:0+img4_height , 1200:1200+img4_width ] = img4
+    frame[ 450:450+img5_height , 0:0+img5_width ] = img5
+    frame[ 450:450+img6_height , 1200:1200+img6_width ] = img6
     lower_bound_red = np.array([131,90,106])
     higher_bound_red = np.array([255,255,255])
 
